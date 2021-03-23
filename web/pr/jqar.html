@@ -1,0 +1,42 @@
+<script>
+    function validate() {
+  alert("Hello! I am an alert box!!");  
+//document.getElementById('submit').onclick = function() {
+document.querySelector('#pets option[value=cat]').remove();
+//}
+
+    
+    
+    }
+    
+</script>
+
+
+
+
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+        <label for="pets">Choose your pets:</label>
+        <form onsubmit = "validate();">
+<select id="pets">
+  <option value="dog">Dog</option>
+  <option value="cat">Cat</option>
+  <option value="rabbit">Rabbit</option>
+  <option value="parrot">Parrot</option>
+</select>
+ 
+<button id="submit" >Remove Cat</button>
+        
+        </form>
+        
+        </div>
+    </body>
+</html>

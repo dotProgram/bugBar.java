@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<div id="div1">
+  <ul class="chk-container">
+    <li>
+      <input class="ck1" type="checkbox" value="item1">Item 1</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item2">Item 2</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item3">Item 3</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item4">Item 4</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item5">Item 5</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item6">Item 6</li>
+  </ul>
+</div>
+<button id="btn-add">Add &raquo;</button>
+<button id="btn-remove">&laquo; Remove</button>
+<div id="div2">
+  <ul class="chk-container-Add">
+    <li>
+      <input class="ck1" type="checkbox" value="item7">Item 7</li>
+    <li>
+      <input class="ck1" type="checkbox" value="item8">Item 8</li>
+  </ul>
+</div>
+    <script type="text/javascript">
+        $('#btn-add').click(function() {
+  $('.chk-container input[type="checkbox"]:checked').each(function() {
+    $(this).
+      prop('checked', false).
+      closest('li').appendTo($('.chk-container-Add'));
+  });
+});
+
+$('#btn-remove').click(function() {
+  $('.chk-container-Add input[type="checkbox"]:checked').each(function() {
+    $(this).
+      // uncheck as we move
+      prop('checked', false).
+      // find the parent <li>
+      // append to the other container
+      // no need to remove
+      closest('li').appendTo($('.chk-container'));
+  });
+});
+    </script>
+</body>
+</html>
